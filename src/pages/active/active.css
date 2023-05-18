@@ -1,0 +1,8 @@
+.active{
+    background-color: rgb(224, 134, 149);
+    color: white;
+    padding: 4;
+}
+.unactive:hover{
+    background-color: rgb(224, 134, 149);
+}
