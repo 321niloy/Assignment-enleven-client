@@ -30,8 +30,8 @@ const Nav = () => {
   </div>
   </div>
 
-  <li className='m-3'> <ActiveLink> Login   </ActiveLink></li>
-  <li className='m-3'> <ActiveLink> Signin  </ActiveLink></li>
+  <li className='m-3'> <ActiveLink to='/login'> Login   </ActiveLink></li>
+  <li className='m-3'> <ActiveLink to="/signin"> Signin  </ActiveLink></li>
       
     </ul>
    

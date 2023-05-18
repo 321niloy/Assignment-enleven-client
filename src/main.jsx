@@ -11,6 +11,7 @@ import Home from './pages/home/Home.jsx';
 import Blogs from './pages/blogs/Blogs.jsx';
 import Error from './pages/error/Error.jsx';
 import Login from './pages/login/Login.jsx';
+import Signin from './pages/sign/Signin.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path:'login',
         element:<Login></Login>
+      },
+      {
+        path:'signin',
+        element:<Signin></Signin>
       }
     ]
   },
