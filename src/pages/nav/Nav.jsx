@@ -17,19 +17,24 @@ const Nav = () => {
     <Link to="/" className="font-extrabold text-xl">ToyBangla</Link>
   </div>
   <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-      <li><ActiveLink>Home     </ActiveLink></li>
-      <li><ActiveLink>All Toys </ActiveLink></li>
-      <li><Link>My Toys  </Link></li>
-      <li><Link>Add a Toy</Link></li>
-      <li><ActiveLink to='/blog'>Blogs    </ActiveLink></li>
-      
-    </ul>
-    <div className="avatar online">
+    <ul className="menu menu-horizontal px-1 ">
+      <li className='m-3'><ActiveLink>Home     </ActiveLink></li>
+      <li className='m-3'><ActiveLink>All Toys </ActiveLink></li>
+      <li className='m-3'><ActiveLink>My Toys  </ActiveLink></li>
+      <li className='m-3'><ActiveLink>Add a Toy</ActiveLink></li>
+      <li className='m-3'><ActiveLink to='/blog'>Blogs    </ActiveLink></li>
+
+      <div className="avatar online">
   <div className="w-16 mask mask-hexagon">
     <img  src={Active} />
   </div>
   </div>
+
+  <li className='m-3'> <ActiveLink> Login   </ActiveLink></li>
+  <li className='m-3'> <ActiveLink> Signin  </ActiveLink></li>
+      
+    </ul>
+   
   </div>
 </div>
         </div>
