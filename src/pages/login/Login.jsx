@@ -1,5 +1,5 @@
 import React from 'react';
-import register from '../../../public/images/active.jpg'
+import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -23,11 +23,18 @@ const Login = () => {
               <div className="mt-5">
                 <input type="password" placeholder="Password" className="border rounded-lg border-gray-400 py-1 px-2 w-full" />
               </div>
+             
               <p className='mt-3'>If you have no Account ? <Link className='text-pink-700' to='/signin'>Signin</Link></p>
               
               <div className="mt-5">
                 <button className="w-full border-pink-600 rounded-lg bg-pink-300 py-3 text-center text-white">Login Now</button>
               </div>
+               {/*  */}
+
+               <button className="mt-3 btn btn-circle btn-warning btn-outline">
+  <FaGoogle/>
+</button>
+              {/*  */}
             </form>
           </div>
         </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
 
 const Signin = () => {
     return (
@@ -18,20 +20,31 @@ const Signin = () => {
               </p>
               <form action="#">
                 <div >
-                  <input type="text" placeholder="Name" className="border rounded-lg border-gray-400 py-1 px-2" />
+                  <input type="text" placeholder="Name" name='name' className="border rounded-lg border-gray-400 py-1 px-2" />
                 </div>
                 <div className="mt-5">
-                  <input type="text" placeholder="Email" className="border rounded-lg border-gray-400 py-1 px-2 w-full" />
+                  <input type="text" placeholder="Email" name='email' className="border rounded-lg border-gray-400 py-1 px-2 w-full" />
                 </div>
                 <div className="mt-5">
-                  <input type="password" placeholder="Password" className="border rounded-lg border-gray-400 py-1 px-2 w-full" />
+                  <input type="password" name='password' placeholder="Password" className="border rounded-lg border-gray-400 py-1 px-2 w-full" />
                 </div>
 
+                <div className="mt-5">
+                  <input type="text" name='photo' placeholder="Photo url" className="border rounded-lg border-gray-400 py-1 px-2 w-full" />
+                </div>
+                
                 <p className='mt-3'>If you have  Account ? <Link className='text-pink-700' to='/login'>Login</Link></p>
                 
                 <div className="mt-5">
                   <button className="w-full border-pink-600 rounded-lg bg-pink-300 py-3 text-center text-white">Signin Now</button>
                 </div>
+                 {/*  */}
+
+               <button className="mt-3 btn btn-circle btn-warning btn-outline">
+  <FaGoogle/>
+</button>
+              {/*  */}
+            
               </form>
             </div>
           </div>
