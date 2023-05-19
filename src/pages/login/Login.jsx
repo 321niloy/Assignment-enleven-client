@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Provider/Authprovider';
 
 const Login = () => {
-  const {SignIn} = useContext(Authcontext)
+  const {SignIn,googlesignin} = useContext(Authcontext)
   const [error,seterror] = useState('')
   const [suc,setsuc] = useState('')
   const handlelogin = event => {
@@ -27,6 +27,20 @@ const Login = () => {
       seterror(error.massage)
     })
   }
+
+  const handlegoogleSignin = () =>{
+    googlesignin()
+    
+    .then((result) => {
+      const loguser = result.user;
+      console.log(loguser)
+      navigate(from,{replace:true})
+    })
+    .catch((error) => {
+      console.log("ERROR",error)
+    })
+  
+    }
 
     return (
         <div className="min-h-screen py-40" > 
@@ -57,7 +71,7 @@ const Login = () => {
                   
                 </div>
                {/*  */}
-              <button className='mt-3 border-rose-400 p-4 rounded'><FaGoogle className='border-rose-400 m-4 rounded'/></button>
+              <button onClick={handlegoogleSignin} className='mt-3 border-rose-400 p-4 rounded'><FaGoogle className='border-rose-400 m-4 rounded'/></button>
                
               {/*  */}
             </form>

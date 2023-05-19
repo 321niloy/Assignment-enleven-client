@@ -21,9 +21,9 @@ const Footer = () => {
     <a className="link link-hover">Toy Company</a>
   </div> 
   <div>
-    <span className="footer-title">ToyShop</span> 
-    <a className="link link-hover">Toyus</a> 
-    <a className="link link-hover">Toycompany</a> 
+    <span className="footer-title">Another contact Info</span> 
+    <a className="link link-hover">000000000</a> 
+    <a className="link link-hover">abcd@gmail.com</a> 
   </div>
 </footer> 
 <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">

@@ -13,6 +13,7 @@ import Error from './pages/error/Error.jsx';
 import Login from './pages/login/Login.jsx';
 import Signin from './pages/sign/Signin.jsx';
 import Authprovider from './Provider/Authprovider.jsx';
+import Alltoys from './pages/alltoys/Alltoys.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path:'signin',
         element:<Signin></Signin>
+      },
+      {
+        path:'alltoys',
+        element:<Alltoys></Alltoys>,
+        loader:() => fetch('http://localhost:3000/alltoys')
       }
     ]
   },

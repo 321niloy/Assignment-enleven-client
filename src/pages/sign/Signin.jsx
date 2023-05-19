@@ -7,7 +7,7 @@ import { Authcontext } from '../../Provider/Authprovider';
 
 
 const Signin = () => {
-  const {createuser} = useContext(Authcontext)
+  const {createuser,googlesignin} = useContext(Authcontext)
   const [error,seterror] = useState('')
 
   const handlesignIn =event =>{
@@ -29,9 +29,22 @@ const Signin = () => {
       console.log(error)
       seterror(error.massage)
     })
-
   
   }
+  const handlegoogleSignin = () =>{
+  googlesignin()
+  
+  .then((result) => {
+    const loguser = result.user;
+    console.log(loguser)
+    navigate(from,{replace:true})
+  })
+  .catch((error) => {
+    console.log("ERROR",error)
+  })
+
+  }
+
     return (
         <div className="min-h-screen py-40" > 
         <div className="container mx-auto">
@@ -70,7 +83,7 @@ const Signin = () => {
                 </div>
                  {/*  */}
 
-                 <button className='mt-3 border-rose-400 p-4 rounded'><FaGoogle className='border-rose-400 m-4 rounded'/></button>
+                 <button onClick={handlegoogleSignin} className='mt-3 border-rose-400 p-4 rounded'><FaGoogle className='border-rose-400 m-4 rounded'/></button>
               {/*  */}
             
               </form>
