@@ -5,10 +5,12 @@ import Tabit from '../tabin/Tabit';
 import Marque from '../marque/Marque';
 import OnlinePartner from '../online/OnlinePartner';
 import Contact from '../contact/Contact';
+import useTitle from '../../usetitle/Usetitle';
 
 
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Marque></Marque>

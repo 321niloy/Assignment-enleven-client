@@ -1,13 +1,18 @@
 
 import { useContext, useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Provider/Authprovider';
+import useTitle from '../../usetitle/Usetitle';
 
 const Login = () => {
   const {SignIn,googlesignin} = useContext(Authcontext)
+  useTitle('LOGIN')
   const [error,seterror] = useState('')
   const [suc,setsuc] = useState('')
+  const navigate = useNavigate()
+const location = useLocation()
+const from = location.state?.from?.pathname || '/'
   const handlelogin = event => {
     event.preventDefault()
     const form = event.target

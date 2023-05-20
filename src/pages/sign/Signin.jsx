@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 
 import { Authcontext } from '../../Provider/Authprovider';
+import useTitle from '../../usetitle/Usetitle';
 
 
 
 const Signin = () => {
+  useTitle('signin')
   const {createuser,googlesignin} = useContext(Authcontext)
   const [error,seterror] = useState('')
 

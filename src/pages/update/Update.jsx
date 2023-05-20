@@ -1,7 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import useTitle from '../../usetitle/Usetitle';
 
 const Update = () => {
+  useTitle('Update')
+  const navigate = useNavigate()
     const updatetoy = useLoaderData()
     console.log('kkkkkkkkk',updatetoy)
     const {_id,Name,Sellername,Selleremail,subcategory,price,rating,quantity,area} = updatetoy
@@ -31,7 +34,12 @@ const Update = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            if(data.acknowledged>0){
+         
+               navigate('/mytoy',{replace:true})
+          }
         })
+        
 
     }
     return (

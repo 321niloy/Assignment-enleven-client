@@ -1,12 +1,14 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import './details.css'
+import useTitle from '../usetitle/Usetitle';
 
 const Myviewdetails = () => {
     const myalltoy = useLoaderData()
+    useTitle('MyViewdetails')
     const {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area}= myalltoy
     return (
-        <div className="card  bg-base-100 shadow-2xl mt-6 mb-4">
+        <div className="card   shadow-2xl mt-6 mb-4 bg-red-200">
         <div className="card-body">
           <h2 className="text-4xl font-extrabold">Name: {Name}</h2>
           <p className=" text-3xl font-bold">SellerName: {Sellername}</p>

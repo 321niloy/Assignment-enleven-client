@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../usetitle/Usetitle';
 
 const AddProject = () => {
+  useTitle('Add toys')
     const handleAddtoy = event =>{
         event.preventDefault()
         const form = event.target;

@@ -5,7 +5,7 @@ const Detailsall = () => {
 
     const toy = useLoaderData()
     return (
-        <div className="card  bg-base-100 shadow-2xl mt-6 mb-4">
+        <div className="card  bg-red-100 shadow-2xl mt-6 mb-4">
         <div className="card-body">
           <h2 className="text-4xl font-extrabold">{toy.toyname}</h2>
           <p className=" text-3xl font-bold">Category: {toy.subcategory}</p>

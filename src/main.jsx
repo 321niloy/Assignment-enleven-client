@@ -19,6 +19,7 @@ import AddProject from './pages/AddProject/AddProject.jsx';
 import Mytoys from './pages/mytoys/Mytoys.jsx';
 import Update from './pages/update/Update.jsx';
 import Myviewdetails from './myviewdetails/Myviewdetails.jsx';
+import Privateroute from './pages/route/Privateroute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -48,16 +49,16 @@ const router = createBrowserRouter([
       },
       {
         path:'alltoys/:id',
-        element:<Detailsall></Detailsall>,
+        element:<Privateroute><Detailsall></Detailsall></Privateroute>,
         loader:({params}) => fetch(`http://localhost:3000/alltoys/${params.id}`)
       },
       {
         path:'addtoy',
-        element:<AddProject  ></AddProject>,
+        element:<Privateroute><AddProject  ></AddProject></Privateroute>,
       },
       {
         path:'mytoy',
-        element:<Mytoys></Mytoys>,
+        element:<Privateroute><Mytoys></Mytoys></Privateroute>,
         loader:() => fetch('http://localhost:3000/addtoys')
       },
       {

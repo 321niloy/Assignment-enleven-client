@@ -1,27 +1,34 @@
 import { useSingleton } from '@tippyjs/react';
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../usetitle/Usetitle';
 
 const Mytoys = () => {
     const myalltoys = useLoaderData()
+    useTitle('Mytoy')
     
     const {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area}= myalltoys
     const [mytoys, setmytoys] = useState( myalltoys)
+    
 
     const handledelete = id =>{
    fetch(`http://localhost:3000/addtoys/${id}`,{
-   method:'DELETEN'
+   method:'DELETE'
    })
    .then(res => res.json())
    .then(data =>{
     console.log(data)
-   })
-   const remain = mytoys.filter(m => m._id !== id)
+    confirm('Are Yoy Sure???')
+    const remain = mytoys.filter(m => m._id !== id)
    setmytoys(remain)
 
+   })
+   
     }
+   
     return (
         <div className='mt-4 mb-4'>
+       
             <div className="overflow-x-auto">
   <table className="table w-full">
     {/* head */}
