@@ -29,7 +29,7 @@ const Nav = () => {
             <li className="m-3"><ActiveLink>Home</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to="/alltoys">All Toys</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink>My Toys</ActiveLink></li>
-            <li className="m-3 sm:block"><ActiveLink >Add a Toy</ActiveLink></li>
+            <li className="m-3 sm:block"><ActiveLink to="/addtoy">Add a Toy</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to='/blog'>Blogs</ActiveLink></li>
 
             <Tippy content={<span className="bg-pink-500 p-3 text-white rounded-lg">{user?user.displayName:"Name none"}</span>}>

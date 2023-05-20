@@ -17,6 +17,10 @@ const Tabit = () => {
     setSelectedTab(index);
   };
     return (
+       <>
+       <div className='text-center  text-xl pt-3 pb-3 bg-red-300 font-extrabold rounded-lg'>
+        <p>Category</p>
+       </div>
         <div className='mt-5 mb-5 rounded-lg'>
       <Tabs className="bg-white-400 rounded-lg" selectedIndex={selectedTab} onSelect={handleTabSelect}>
         <TabList className="bg-red-400 font-extrabold rounded-lg text-sm lg:text-lg">
@@ -255,6 +259,7 @@ const Tabit = () => {
         
       </Tabs>
     </div>
+       </>
     );
 };
 

@@ -1,29 +1,12 @@
-import React, { useEffect } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Alltoys = () => {
     const alltoys = useLoaderData()
-    console.log(alltoys)
-
-    const viewdetails = id =>{
-console.log(id)
-useEffect(()=>{
-fetch(`http://localhost:3000/alltoys/${id}`,{
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(),
+    
 
 
-})
-.then(res => res.json())
-.then(data =>{
-    console.log(data)
-})
-
-},[])
-    }
+    
     return (
         <div className='mt-4 mb-4'>
             <div className="overflow-x-auto">
@@ -49,7 +32,7 @@ fetch(`http://localhost:3000/alltoys/${id}`,{
         <td className='bg-pink-200 text-slate-700'>{alltoy.subcategory}</td>
         <td className='bg-pink-200 text-slate-700'>{alltoy.price}tk</td>
         <td className='bg-pink-200 text-slate-700'>{alltoy.quantity}</td>
-        <td className='bg-pink-200 '><button onClick={()=> viewdetails(alltoy._id)} className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>View Details</button></td>
+        <td className='bg-pink-200 '><Link to={`/alltoys/${alltoy._id}`} className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>View Details</Link></td>
       </tr>)
    }
     

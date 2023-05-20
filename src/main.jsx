@@ -14,6 +14,9 @@ import Login from './pages/login/Login.jsx';
 import Signin from './pages/sign/Signin.jsx';
 import Authprovider from './Provider/Authprovider.jsx';
 import Alltoys from './pages/alltoys/Alltoys.jsx';
+import Detailsall from './pages/viewalltoysDetails/Detailsall.jsx';
+import AddProject from './pages/AddProject/AddProject.jsx';
+import Mytoys from './pages/mytoys/Mytoys.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +43,20 @@ const router = createBrowserRouter([
         path:'alltoys',
         element:<Alltoys></Alltoys>,
         loader:() => fetch('http://localhost:3000/alltoys')
+      },
+      {
+        path:'alltoys/:id',
+        element:<Detailsall></Detailsall>,
+        loader:({params}) => fetch(`http://localhost:3000/alltoys/${params.id}`)
+      },
+      {
+        path:'addtoy',
+        element:<AddProject  ></AddProject>,
+      },
+      {
+        path:'mytoy',
+        element:<Mytoys></Mytoys>,
+        loader:() => fetch('http://localhost:3000/addtoys')
       }
     ]
   },
