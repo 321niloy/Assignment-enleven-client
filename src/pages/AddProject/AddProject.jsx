@@ -63,7 +63,7 @@ const AddProject = () => {
                 <input type="text" name='quantity' placeholder="Quantity" className="border rounded-lg border-gray-400 py-1 px-2 w-full" required/>
               </div>
               </div>
-              <textarea name='area' className='mt-5 border rounded-lg border-gray-400 py-1 px-2 w-full'></textarea>
+              <textarea name='area' placeholder='Describtion' className='mt-5 border rounded-lg border-gray-400 py-1 px-2 w-full'></textarea>
              
              
               <div className="mt-5">

@@ -1,10 +1,25 @@
-import React from 'react';
+import { useSingleton } from '@tippyjs/react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const Mytoys = () => {
-    const mytoys = useLoaderData()
-    console.log('kk',mytoys)
-    const {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area}= mytoys
+    const myalltoys = useLoaderData()
+    
+    const {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area}= myalltoys
+    const [mytoys, setmytoys] = useState( myalltoys)
+
+    const handledelete = id =>{
+   fetch(`http://localhost:3000/addtoys/${id}`,{
+   method:'DELETEN'
+   })
+   .then(res => res.json())
+   .then(data =>{
+    console.log(data)
+   })
+   const remain = mytoys.filter(m => m._id !== id)
+   setmytoys(remain)
+
+    }
     return (
         <div className='mt-4 mb-4'>
             <div className="overflow-x-auto">
@@ -39,8 +54,8 @@ const Mytoys = () => {
         <td className='bg-pink-200 text-slate-700'>{mytoy.rating}</td>
         <td className='bg-pink-200 text-slate-700'>{mytoy.quantity}</td>
         <td className='bg-pink-200 '><Link className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>View Details</Link></td>
-        <td className='bg-pink-200 '><Link className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>Update</Link></td>
-        <td className='bg-pink-200 '><button className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>Delete</button></td>
+        <td className='bg-pink-200 '><Link to={`/update/${mytoy._id}`} className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>Update</Link></td>
+        <td className='bg-pink-200 '><button onClick={() => handledelete(mytoy._id)} className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>Delete</button></td>
       </tr>)
    }
     
