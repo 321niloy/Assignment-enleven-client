@@ -28,7 +28,7 @@ const Nav = () => {
           <ul className="menu lg:menu-horizontal px-1   mx-auto">
             <li className="m-3"><ActiveLink>Home</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to="/alltoys">All Toys</ActiveLink></li>
-            <li className="m-3 sm:block"><ActiveLink>My Toys</ActiveLink></li>
+            <li className="m-3 sm:block"><ActiveLink to='/mytoy'>My Toys</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to="/addtoy">Add a Toy</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to='/blog'>Blogs</ActiveLink></li>
 
