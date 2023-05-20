@@ -26,7 +26,7 @@ const Nav = () => {
         </div>
         <div className="flex  ">
           <ul className="menu lg:menu-horizontal px-1   mx-auto">
-            <li className="m-3"><ActiveLink>Home</ActiveLink></li>
+            <li className="m-3"><ActiveLink to="/">Home</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to="/alltoys">All Toys</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to='/mytoy'>My Toys</ActiveLink></li>
             <li className="m-3 sm:block"><ActiveLink to="/addtoy">Add a Toy</ActiveLink></li>
@@ -41,7 +41,7 @@ const Nav = () => {
             </Tippy>
 
             {
-              user?<li className="m-3"><ActiveLink><button onClick={handlelogout}>LogOut</button></ActiveLink></li>:<li className="m-3"><ActiveLink to='/login'>Login</ActiveLink></li>
+              user?<li className="m-3"><Link><button onClick={handlelogout}>LogOut</button></Link></li>:<li className="m-3"><ActiveLink to='/login'>Login</ActiveLink></li>
             }
             {
               user? '' : <li className="m-3"><ActiveLink to="/signin">Signin</ActiveLink></li>

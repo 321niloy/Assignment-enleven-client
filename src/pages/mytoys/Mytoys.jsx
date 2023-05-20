@@ -53,7 +53,7 @@ const Mytoys = () => {
         <td className='bg-pink-200 text-slate-700'>{mytoy.price}</td>
         <td className='bg-pink-200 text-slate-700'>{mytoy.rating}</td>
         <td className='bg-pink-200 text-slate-700'>{mytoy.quantity}</td>
-        <td className='bg-pink-200 '><Link className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>View Details</Link></td>
+        <td className='bg-pink-200 '><Link to={`/myview/${mytoy._id}`} className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>View Details</Link></td>
         <td className='bg-pink-200 '><Link to={`/update/${mytoy._id}`} className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>Update</Link></td>
         <td className='bg-pink-200 '><button onClick={() => handledelete(mytoy._id)} className='bg-pink-600 p-3 rounded-xl text-white font-extrabold'>Delete</button></td>
       </tr>)
