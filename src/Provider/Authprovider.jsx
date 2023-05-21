@@ -93,7 +93,7 @@ useEffect(()=>{
         logout,
         googlesignin,
         user,
-        loader
+        loader,setLoader
     }
 
     return (
