@@ -12,6 +12,7 @@ const Signin = () => {
   useTitle('signin')
   const {createuser,googlesignin} = useContext(Authcontext)
   const [error,seterror] = useState('')
+  const [suc,setsuc] = useState('')
 
   const handlesignIn =event =>{
     event.preventDefault()
@@ -26,6 +27,7 @@ const Signin = () => {
     .then(result => {
       const Createuser = result.user;
       console.log(Createuser)
+      setsuc('Signup successfull')
       form.reset()
     })
     .catch(error =>{
@@ -61,7 +63,7 @@ const Signin = () => {
               </div>
             </div>
             <div className="w-full lg:w-1/2 py-16 px-12">
-              <h2 className="text-3xl mb-4 font-extrabold ">Signin Now</h2>
+              <h2 className="text-3xl mb-4 font-extrabold ">SignUp Now</h2>
               <p className="mb-4">
                 Create your account. It’s free and only takes a minute
               </p>
@@ -82,8 +84,9 @@ const Signin = () => {
                 
                 <p className='mt-3'>If you have  Account ? <Link className='text-pink-700' to='/login'>Login</Link></p>
                 <p className='text-red-700'>{error}</p>
+                <p className='text-green-700'>{suc}</p>
                 <div className="mt-5">
-                  <input className="w-full border-pink-600 rounded-lg bg-pink-300 py-3 text-center text-white" type="submit" value="Signin Now" />
+                  <input className="w-full border-pink-600 rounded-lg bg-pink-300 py-3 text-center text-white" type="submit" value="SignUp Now" />
                   
                 </div>
                  {/*  */}

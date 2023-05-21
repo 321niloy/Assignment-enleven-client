@@ -29,7 +29,7 @@ const from = location.state?.from?.pathname || '/'
     })
     .catch(error =>{
       console.log(error)
-      seterror(error.massage)
+      seterror('Email or password wiil be wrong',error.massage)
     })
   }
 

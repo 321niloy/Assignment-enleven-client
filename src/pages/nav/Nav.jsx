@@ -44,7 +44,7 @@ const Nav = () => {
               user?<li className="m-3"><Link><button onClick={handlelogout}>LogOut</button></Link></li>:<li className="m-3"><ActiveLink to='/login'>Login</ActiveLink></li>
             }
             {
-              user? '' : <li className="m-3"><ActiveLink to="/signin">Signin</ActiveLink></li>
+              user? '' : <li className="m-3"><ActiveLink to="/signin">Signup</ActiveLink></li>
             }
           </ul>
         </div>
