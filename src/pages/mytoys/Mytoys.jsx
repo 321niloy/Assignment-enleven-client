@@ -6,8 +6,6 @@ import useTitle from '../../usetitle/Usetitle';
 const Mytoys = () => {
     const myalltoys = useLoaderData()
     useTitle('Mytoy')
-    
-    const {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area}= myalltoys
     const [mytoys, setmytoys] = useState( myalltoys)
     
 

@@ -8,6 +8,7 @@ const AddProject = () => {
         const form = event.target;
         const Name = form.name.value;
         const Sellername = form.sellername.value;
+        const photo = form.photo.value;
         const Selleremail = form.selleremail.value;
         const subcategory = form.subcategory.value;
         const price = form.price.value;
@@ -16,7 +17,7 @@ const AddProject = () => {
         const area = form.area.value;
         // console.log(Name,Sellername,Selleremail,subcategory,price,rating,quantity,area)
         form.reset()
-        const addit = {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area}
+        const addit = {Name,Sellername,photo,Selleremail,subcategory,price,rating,quantity,area}
         console.log(addit)
         fetch(`http://localhost:3000/addtoys`,{
             method: "POST", 
@@ -56,6 +57,9 @@ const AddProject = () => {
 
               <div className="mt-5">
                 <input type="text" name='price' placeholder="Price" className="border rounded-lg border-gray-400 py-1 px-2 w-full" required/>
+              </div>
+              <div className="mt-5">
+                <input type="text" name='photo' placeholder="Photourl" className="border rounded-lg border-gray-400 py-1 px-2 w-full" required/>
               </div>
               <div className='flex'>
               <div className="mt-5 me-2">
