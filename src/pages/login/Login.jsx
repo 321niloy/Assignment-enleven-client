@@ -26,6 +26,7 @@ const from = location.state?.from?.pathname || '/'
       console.log(Createuser)
       setsuc('Login Successful')
       form.reset()
+      navigate(from,{replace:true})
     })
     .catch(error =>{
       console.log(error)

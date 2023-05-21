@@ -33,11 +33,13 @@ const Nav = () => {
             <li className="m-3 sm:block"><ActiveLink to='/blog'>Blogs</ActiveLink></li>
 
             <Tippy content={<span className="bg-pink-500 p-3 text-white rounded-lg">{user?user.displayName:"Name none"}</span>}>
-              <div className="avatar online">
+              {
+                user && <div className="avatar online">
                 <div className="w-16 mask mask-hexagon">
                   <img src={Active} alt="Active" />
                 </div>
               </div>
+              }
             </Tippy>
 
             {

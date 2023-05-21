@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import useTitle from '../../usetitle/Usetitle';
+import Swal from 'sweetalert2';
 
 const Update = () => {
   useTitle('Update')
@@ -36,7 +37,11 @@ const Update = () => {
         .then(data => {
             console.log(data)
             if(data.acknowledged>0){
-         
+              Swal.fire(
+                'Update Succesfull!',
+                'You clicked the button!',
+                'success'
+              )
                navigate('/mytoy',{replace:true})
           }
         })
@@ -69,7 +74,7 @@ const Update = () => {
             <input type="text" name='price' placeholder="Price" className="border rounded-lg border-gray-400 py-1 px-2 w-full" defaultValue={price} required/>
           </div>
           <div className="mt-5">
-                <input type="text" name='photo' placeholder="Photourl" className="border rounded-lg border-gray-400 py-1 px-2 w-full" required/>
+                <input type="text" name='photo' placeholder="Photourl" className="border rounded-lg border-gray-400 py-1 px-2 w-full" defaultValue={photo} required/>
               </div>
           <div className='flex'>
           <div className="mt-5 me-2">

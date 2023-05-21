@@ -1,13 +1,31 @@
 import { useSingleton } from '@tippyjs/react';
-import React, { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import useTitle from '../../usetitle/Usetitle';
 
 const Mytoys = () => {
-    const myalltoys = useLoaderData()
+    const navigate = useNavigate()
     useTitle('Mytoy')
-    const [mytoys, setmytoys] = useState( myalltoys)
-    
+    const [mytoys, setmytoys] = useState( )
+    // ////////////////////////////
+    useEffect(() =>{
+      fetch("http://localhost:3000/addtoys",{
+        method:'GET',
+        headers:{athorization:`Bearer ${localStorage.getItem('Car-access-token')}`}
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(!data.error){
+          setmytoys(data)
+      }
+      else{
+        navigate('/')
+      }
+
+      } )
+    },[])
+
+    // ///-------------------------------------
 
     const handledelete = id =>{
    fetch(`http://localhost:3000/addtoys/${id}`,{
@@ -49,7 +67,7 @@ const Mytoys = () => {
     
 
 {
-    mytoys.map(mytoy =>    <tr >
+    mytoys?.map(mytoy =>    <tr >
         
         <td className='bg-pink-200 text-slate-700'>{mytoy.Name}</td>
         <td className='bg-pink-200 text-slate-700'>{mytoy.Sellername}</td>
