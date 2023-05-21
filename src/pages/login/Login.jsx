@@ -49,7 +49,9 @@ const from = location.state?.from?.pathname || '/'
 
     return (
         <div className="min-h-screen py-40" > 
-      <div className="container mx-auto">
+      <div className="container mx-auto"  data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
         <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
           <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style={{ backgroundImage:"radial-gradient(circle at 10% 20%, rgb(246, 187, 187) 0%, rgb(249, 219, 217) 90%)" }}>
             <h1 className="text-slate-700 text-3xl mb-3">Welcome</h1>
