@@ -79,7 +79,7 @@ const Signin = () => {
                 </div>
 
                 <div className="mt-5">
-                  <input type="text" name='photo' placeholder="Photo url" className="border rounded-lg border-gray-400 py-1 px-2 w-full" required/>
+                  <input type="text" name='photo' placeholder="Photo url" className="border rounded-lg border-gray-400 py-1 px-2 w-full" />
                 </div>
                 
                 <p className='mt-3'>If you have  Account ? <Link className='text-pink-700' to='/login'>Login</Link></p>

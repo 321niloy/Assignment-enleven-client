@@ -4,8 +4,21 @@ import useTitle from '../../usetitle/Usetitle';
 
 
 const Alltoys = () => {
-    const alltoys = useLoaderData()
+    
     useTitle('All TOys')
+    const [alltoys, settoys] =useState([])
+
+    useEffect(() =>{
+   fetch("http://localhost:3000/alltoys")
+   .then(res => res.json())
+   .then(data =>{
+    settoys(data)
+   })
+
+
+
+
+    },[])
     
 
  

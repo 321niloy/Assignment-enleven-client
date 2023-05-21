@@ -1,15 +1,18 @@
 import { useSingleton } from '@tippyjs/react';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import useTitle from '../../usetitle/Usetitle';
+import Swal from 'sweetalert2';
+import { Authcontext } from '../../Provider/Authprovider';
 
 const Mytoys = () => {
     const navigate = useNavigate()
+    const {user} = useContext(Authcontext)
     useTitle('Mytoy')
     const [mytoys, setmytoys] = useState( )
     // ////////////////////////////
     useEffect(() =>{
-      fetch("http://localhost:3000/addtoys",{
+      fetch(`http://localhost:3000/addtoys/${user?.email}`,{
         method:'GET',
         headers:{athorization:`Bearer ${localStorage.getItem('Car-access-token')}`}
       })
@@ -35,6 +38,11 @@ const Mytoys = () => {
    .then(data =>{
     console.log(data)
     confirm('Are Yoy Sure???')
+    Swal.fire(
+      'Delete Succesfull!',
+      'You clicked the button!',
+      'success'
+    )
     const remain = mytoys.filter(m => m._id !== id)
    setmytoys(remain)
 

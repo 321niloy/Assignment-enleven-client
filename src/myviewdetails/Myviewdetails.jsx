@@ -7,7 +7,7 @@ import LazyLoad from 'react-lazyload';
 const Myviewdetails = () => {
     const myalltoy = useLoaderData()
     useTitle('MyViewdetails')
-    const {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area,photo}= myalltoy
+    const {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area,photo,email}= myalltoy
     return (
         <div className="card   shadow-2xl mt-6 mb-4 bg-red-200">
         <div className="card-body">
@@ -21,6 +21,7 @@ const Myviewdetails = () => {
           <p className=" text-3xl font-bold">Price: {price}</p>
           <p className=" text-3xl font-bold">Rating: {rating}</p>
           <p className=" text-3xl font-bold">Quantity: {quantity}</p>
+          <p className=" text-3xl font-bold">Email: {email}</p>
           <p className=" text-3xl font-bold">Describtion:</p>
           <div id='border'>
           <p className=" text-3xl font-bold">{area}</p>

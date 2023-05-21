@@ -8,7 +8,7 @@ const Update = () => {
   const navigate = useNavigate()
     const updatetoy = useLoaderData()
     console.log('kkkkkkkkk',updatetoy)
-    const {_id,Name,Sellername,Selleremail,subcategory,price,rating,quantity,area} = updatetoy
+    const {_id,Name,Sellername,Selleremail,subcategory,price,rating,quantity,area,photo} = updatetoy
     const handleupdatetoy = event =>{
         event.preventDefault()
         const form = event.target;
@@ -20,10 +20,11 @@ const Update = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
+        const email = form.email.value;
         const area = form.area.value;
         // console.log(Name,Sellername,Selleremail,subcategory,price,rating,quantity,area)
         form.reset()
-        const updateit = {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area,photo}
+        const updateit = {Name,Sellername,Selleremail,subcategory,price,rating,quantity,area,photo,email}
         
         fetch(`http://localhost:3000/update/${_id}`,{
             method: "PUT", 
@@ -75,6 +76,9 @@ const Update = () => {
           </div>
           <div className="mt-5">
                 <input type="text" name='photo' placeholder="Photourl" className="border rounded-lg border-gray-400 py-1 px-2 w-full" defaultValue={photo} required/>
+              </div>
+              <div className="mt-5">
+                <input type="text" name='email' placeholder="Email" className="border rounded-lg border-gray-400 py-1 px-2 w-full" defaultValue={user?.email} required/>
               </div>
           <div className='flex'>
           <div className="mt-5 me-2">

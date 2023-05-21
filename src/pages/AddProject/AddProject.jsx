@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useTitle from '../../usetitle/Usetitle';
+import { Authcontext } from '../../Provider/Authprovider';
+import Swal from 'sweetalert2';
 
 const AddProject = () => {
+  const {user} = useContext(Authcontext)
   useTitle('Add toys')
     const handleAddtoy = event =>{
         event.preventDefault()
@@ -14,10 +17,11 @@ const AddProject = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
+        const email = form.email.value;
         const area = form.area.value;
         // console.log(Name,Sellername,Selleremail,subcategory,price,rating,quantity,area)
         form.reset()
-        const addit = {Name,Sellername,photo,Selleremail,subcategory,price,rating,quantity,area}
+        const addit = {Name,Sellername,photo,Selleremail,subcategory,price,rating,quantity,area,email}
         console.log(addit)
         fetch(`http://localhost:3000/addtoys`,{
             method: "POST", 
@@ -29,6 +33,11 @@ const AddProject = () => {
         })
         .then(res => res.json())
         .then(data => {
+          Swal.fire(
+            'Add toy Succesfull!',
+            'You clicked the button!',
+            'success'
+          )
             console.log(data)
         })
 
@@ -60,6 +69,9 @@ const AddProject = () => {
               </div>
               <div className="mt-5">
                 <input type="text" name='photo' placeholder="Photourl" className="border rounded-lg border-gray-400 py-1 px-2 w-full" required/>
+              </div>
+              <div className="mt-5">
+                <input type="text" name='email' placeholder="Email" className="border rounded-lg border-gray-400 py-1 px-2 w-full" defaultValue={user?.email} required/>
               </div>
               <div className='flex'>
               <div className="mt-5 me-2">

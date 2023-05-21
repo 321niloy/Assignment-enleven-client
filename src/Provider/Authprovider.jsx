@@ -41,48 +41,50 @@ useEffect(() =>{
       });
 },[])
 
-// useEffect(()=>{
-//     const unsubscribed =  onAuthStateChanged(auth ,currentUser =>{
+useEffect(()=>{
+    const unsubscribed =  onAuthStateChanged(auth ,currentUser =>{
       
-//        setuser(currentUser)
-//        setLoader(false)
-//      })
-//    return () =>{
-//         unsubscribed()
-//    }
+       setuser(currentUser)
+       setLoader(false)
+       if(currentUser && currentUser.email){
+        const loguser = {
+            email:currentUser.email
+          }
+        fetch('http://localhost:3000/jwt',{
+            method:"POST",
+            headers:{
+              'content-type':'application/json'
+            },
+            body:JSON.stringify(loguser)
+          })
+          .then(res => res.json())
+          .then(data =>{
+            console.log('jwt response', data)
+            // locla storage is not safe place it is second safe place
+            localStorage.setItem("Car-access-token", data.token)
+           
+          })
+         
+    }
+    else{
+        localStorage.removeItem('Car-access-token')
+      }
+
+
+
+
+
+
+     })
+   return () =>{
+        unsubscribed()
+   }
    
 
 
 
-// },[])
-useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-       
-      if (currentUser) {
-        if (currentUser.displayName === null) {
-            updateProfile(auth.currentUser, {
-                displayName: "Niloy"
-              })
-            .then(() => {
-              console.log("Display name set successfully.");
-            })
-            .catch((error) => {
-              console.log("Error setting display name:", error);
-            });
-        }
-  
-        setuser(currentUser);
-        setLoader(false);
-      } else {
-        setuser(null);
-        setLoader(false);
-      }
-    });
-  
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+},[])
+
   
 
     const authinfo = {
