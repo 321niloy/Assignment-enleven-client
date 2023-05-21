@@ -20,13 +20,13 @@ import g10 from '../../../public/images/four.webp'
 const Gallery = () => {
     return (
         <>
- <div class="container">
-    <div class="heading">
+ <div class="container" >
+    <div class="heading" data-aos="flip-left">
       <h3>Toy <span >Gallery</span></h3>
     </div>
     <div class="box">
       
-      <div class="dream">
+      <div class="dream" data-aos="zoom-in">
          <img src={g1} />
          <img src={g2} />
          <img src={g3} />
@@ -35,7 +35,7 @@ const Gallery = () => {
             
       </div>
 
-        <div class="dream">
+        <div class="dream" data-aos="zoom-out-up">
         <img src={g6}/>
          <img src={g7}/>
           <img src={g8}/>
@@ -44,7 +44,7 @@ const Gallery = () => {
             
       </div>
 
-        <div class="dream">
+        <div class="dream" data-aos="zoom-in-right">
         <img src={g2}/>
          <img src={g4}/>
           <img src={g1}/>
@@ -57,7 +57,8 @@ const Gallery = () => {
 
 
     </div>
-    <div class="btn">
+    <div class="btn"  data-aos="fade-up"
+     data-aos-duration="3000">
       <a href="#">More</a>
     </div>
 
